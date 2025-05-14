@@ -29,6 +29,7 @@ type KFLocation = {
 type KFPersonDb = {
   firstName: string
   lastName: string
+  title: string
   id: string
   locality: string | null
   denomination: string | null

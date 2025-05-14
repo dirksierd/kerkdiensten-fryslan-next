@@ -42,6 +42,7 @@ export default defineEventHandler(async (event) => {
             'person', JSON_OBJECT(
               'firstName', p.firstName,
               'lastName', p.lastName,
+              'title', p.title,
               'id', p.id,
               'locality', p.locality,
               'denomination',

@@ -17,6 +17,7 @@
 
   const { data: person } = await useFetch(`/api/v1/people/${personId}`)
 
-  const fullName = [person.value.firstName, person.value.lastName].join(' ')
+  const fullName = `${person.value.title}. ${person.value.firstName} ${person.value.lastName}`
+
   useHead({ title: fullName })
 </script>

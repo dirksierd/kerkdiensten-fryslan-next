@@ -20,7 +20,8 @@
         :to="`/voorganger/${role.person.id}`"
         class="mr-1 inline-block rounded-md border bg-white px-2 text-sm"
       >
-        {{ role.person.firstName }} {{ role.person.lastName }}
+        {{ role.person.title }}. {{ role.person.firstName }}
+        {{ role.person.lastName }}
       </NuxtLink>
     </div>
   </div>

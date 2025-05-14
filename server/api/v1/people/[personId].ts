@@ -7,6 +7,7 @@ export default defineEventHandler(async (event) => {
       SELECT
         p.firstName,
         p.lastName,
+        p.title,
         p.id,
         p.locality,
         CASE
