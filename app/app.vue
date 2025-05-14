@@ -1,6 +1,6 @@
 <template>
-  <div>
+  <div class="p-4">
     <NuxtRouteAnnouncer />
-    <p>Kerkdiensten<strong>Fryslân</strong></p>
+    <NuxtPage />
   </div>
 </template>

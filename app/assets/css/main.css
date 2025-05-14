@@ -1,1 +1,7 @@
 @import 'tailwindcss';
+
+@source inline('bg-sky-100');
+
+@theme {
+  --font-title: "Merriweather", serif;
+}
