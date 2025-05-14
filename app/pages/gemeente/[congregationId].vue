@@ -18,4 +18,8 @@
   const { data: congregation } = await useFetch(
     `/api/v1/congregations/${congregationId}`,
   )
+
+  useHead({
+    title: congregation.value.title,
+  })
 </script>
