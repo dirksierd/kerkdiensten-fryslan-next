@@ -5,3 +5,9 @@
 @theme {
   --font-title: "Merriweather", serif;
 }
+
+@layer components {
+  pre {
+    @apply text-sm overflow-auto
+  }
+}

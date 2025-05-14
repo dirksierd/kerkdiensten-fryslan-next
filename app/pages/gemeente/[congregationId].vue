@@ -2,7 +2,7 @@
   <AppBlock>
     <template #title>Gemeente</template>
     <pre>{{ congregation }}</pre>
-    <pre>{{ events }}</pre>
+    <EventList v-if="events" :events="events" />
   </AppBlock>
 </template>
 
@@ -11,7 +11,7 @@
   const congregationId = route.params.congregationId as string
   const searchParams = new URLSearchParams({ congregationId })
 
-  const { data: events } = await useFetch(
+  const { data: events } = await useFetch<KFEvent[]>(
     '/api/v1/events?' + searchParams.toString(),
   )
 
