@@ -49,17 +49,8 @@ export default defineEventHandler(async (event) => {
                       'id', pd.id,
                       'title', pd.title
                     )
-                END,
-              'congregation',
-                CASE
-                  WHEN pc.id IS NULL THEN NULL
-                  ELSE
-                    JSON_OBJECT(
-                      'id', pc.id,
-                      'title', pc.title
-                    )
                 END
-            )
+              )
           )
         ) FILTER (
           WHERE p.id IS NOT NULL
@@ -75,10 +66,6 @@ export default defineEventHandler(async (event) => {
       ON ep.eventId = e.id
       JOIN people p
       ON p.id = ep.personId
-      LEFT JOIN congregations_people cp
-      ON cp.personId = p.id
-      LEFT JOIN congregations pc
-      ON pc.id = cp.congregationId
       LEFT JOIN denominations pd
       ON pd.id = p.denominationId
   `

@@ -1,7 +1,8 @@
 <template>
   <AppBlock>
     <template #title>Voorganger {{ $route.params.slug }}</template>
-    <pre>{{ data }}</pre>
+    <pre>{{ person }}</pre>
+    <pre>{{ events }}</pre>
   </AppBlock>
 </template>
 
@@ -9,5 +10,10 @@
   const route = useRoute()
   const personId = route.params.personId as string
   const searchParams = new URLSearchParams({ personId })
-  const { data } = useFetch('/api/v1/events?' + searchParams.toString())
+
+  const { data: events } = await useFetch(
+    '/api/v1/events?' + searchParams.toString(),
+  )
+
+  const { data: person } = await useFetch(`/api/v1/people/${personId}`)
 </script>

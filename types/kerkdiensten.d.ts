@@ -18,16 +18,26 @@ type KFLocation = {
   congregation: KFCongregation | null
 }
 
-type KFPerson = {
+type KFPersonDb = {
   firstName: string
   lastName: string
   id: string
   locality: string | null
-  denomination: KFDenomination | null
-  congregation: KFCongregation | null
+  denomination: string | null
+  congregations: string | null
 }
 
-type KFRole = {
+type KFPerson = Omit<KFPersonDb, 'denomination', 'congregations'> & {
+  denomination: KFDenomination | null
+  congregations: KFCongregationRole[]
+}
+
+type KFCongregationRole = {
+  role: KFRoleOption
+  congregation: KFCongregation
+}
+
+type KFPersonRole = {
   role: KFRoleOption
   person: KFPerson
 }
@@ -52,5 +62,5 @@ type KFEvent = Omit<
   isSpecial: boolean
   hasHolySupper: boolean
   location: KFLocation[]
-  roles: KFRole[]
+  roles: KFPersonRole[]
 }
