@@ -97,7 +97,8 @@ CREATE TABLE events_people (
 	id VARCHAR NOT NULL PRIMARY KEY,
 	eventId VARCHAR NOT NULL,
 	personId VARCHAR NOT NULL,
-	insertedAt INTEGER NOT NULL, "role" VARCHAR NOT NULL DEFAULT 'pastor',
+	insertedAt INTEGER NOT NULL,
+	"role" VARCHAR NOT NULL DEFAULT 'pastor',
 
 	FOREIGN KEY (eventId)
 		REFERENCES events (id)

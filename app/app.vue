@@ -5,13 +5,14 @@
     <NuxtLayout>
       <div class="space-y-4">
         <AppBlock class="max-w-sm">
-          <h1 class="text-2xl font-title">
+          <template #title>
             <NuxtLink
               to="/"
-              class="hover:underline hover:underline-offset-2 truncate block"
+              class="hover:underline hover:underline-offset-2 truncate block text-3xl"
               >Kerkdiensten<strong>Fryslân</strong></NuxtLink
             >
-          </h1>
+          </template>
+
           <p>Hier bouwen wij aan de toekomst.</p>
         </AppBlock>
 
