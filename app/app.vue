@@ -13,7 +13,7 @@
             >
           </template>
 
-          <p>Hier bouwen wij aan de toekomst.</p>
+          <p>Hier bouwen wij aan de nieuwe site.</p>
         </AppBlock>
 
         <NuxtPage />
