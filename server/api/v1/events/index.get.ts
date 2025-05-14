@@ -111,7 +111,9 @@ export default defineEventHandler(async (event) => {
       location: JSON.parse(r.location),
       hasHolySupper: r.hasHolySupper === 1,
       isSpecial: r.isSpecial === 1,
-      roles: JSON.parse(r.roles),
+      roles: (JSON.parse(r.roles) as KFPersonRole[]).sort((a, b) =>
+        a.person.firstName > b.person.firstName ? 1 : -1,
+      ),
     }
   })
 
