@@ -66,7 +66,7 @@ export default defineEventHandler(async (event) => {
       ON lc.id = l.congregationId
       LEFT JOIN denominations cd
       ON cd.id = lc.denominationId
-      LEFT JOIN events_people ep
+      JOIN events_people ep
       ON ep.eventId = e.id
       JOIN people p
       ON p.id = ep.personId
@@ -75,7 +75,13 @@ export default defineEventHandler(async (event) => {
   `
 
   if (filters.personId) {
-    query += `WHERE p.id = ? `
+    query += `
+      JOIN events_people ep2
+      ON ep2.eventId = e.id
+      JOIN people p2
+      ON p2.id = ep2.personId
+      WHERE p2.id = ?
+    `
     bindings.push(filters.personId)
   }
 
