@@ -1,6 +1,8 @@
 export default defineEventHandler(async (event) => {
   const DB = event.context.cloudflare.env.DB
-  const filters = getQuery<{ personId?: string }>(event)
+  const filters = getQuery<{ personId?: string; congregationId?: string }>(
+    event,
+  )
 
   const bindings: string[] = []
   let query = `
@@ -73,6 +75,11 @@ export default defineEventHandler(async (event) => {
   if (filters.personId) {
     query += `WHERE p.id = ? `
     bindings.push(filters.personId)
+  }
+
+  if (filters.congregationId) {
+    query += `WHERE lc.id = ? `
+    bindings.push(filters.congregationId)
   }
 
   query += 'GROUP BY e.id'

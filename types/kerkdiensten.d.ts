@@ -7,10 +7,16 @@ type KFDenomination = {
   title: string
 }
 
-type KFCongregation = {
+type KFCongregationDb = {
   id: string
   title: string
+  denomination: string | null
+  locations: string
+}
+
+type KFCongregation = Omit<KFCongregationDb, 'denomination', 'locations'> & {
   denomination: KFDenomination | null
+  locations: KFLocation[]
 }
 
 type KFLocation = {

@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 max-w-3xl mx-auto">
+  <div class="mx-auto max-w-3xl p-4">
     <NuxtRouteAnnouncer />
 
     <NuxtLayout>
@@ -8,7 +8,7 @@
           <template #title>
             <NuxtLink
               to="/"
-              class="hover:underline hover:underline-offset-2 truncate block text-3xl"
+              class="block truncate text-3xl font-normal hover:underline hover:underline-offset-2"
               >Kerkdiensten<strong>Fryslân</strong></NuxtLink
             >
           </template>
