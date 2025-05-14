@@ -20,32 +20,43 @@ export default defineEventHandler(async (event) => {
         END AS denomination,
         JSON_GROUP_ARRAY(
           JSON_OBJECT(
-            'role', cp.role,
-            'congregation',
+            'role', lp.role,
+            'location',
             JSON_OBJECT(
-              'id', c.id,
-              'title', c.title,
-              'denomination',
+              'id', l.id,
+              'title', l.title,
+              'congregation',
               CASE
-                WHEN cd.id IS NULL THEN NULL
+                WHEN c.id IS NULL THEN NULL
                 ELSE
                   JSON_OBJECT(
-                    'id', cd.id,
-                    'title', cd.title,
-                    'titleAbbr', cd.titleAbbr
+                    'id', c.id,
+                    'title', c.title,
+                    'denomination',
+                    CASE
+                      WHEN cd.id IS NULL THEN NULL
+                      ELSE
+                        JSON_OBJECT(
+                          'id', cd.id,
+                          'title', cd.title,
+                          'titleAbbr', cd.titleAbbr
+                        )
+                    END
                   )
               END
             )
           )
         ) FILTER (
-          WHERE c.id IS NOT NULL
-        ) AS congregations
+          WHERE l.id IS NOT NULL
+        ) AS locations
       FROM people p
-      LEFT JOIN congregations_people cp
-      ON cp.personId = p.id
-      JOIN congregations c
-      ON c.id = cp.congregationId
-      JOIN denominations cd
+      LEFT JOIN locations_people lp
+      ON lp.personId = p.id
+      JOIN locations l
+      ON l.id = lp.locationId
+      LEFT JOIN congregations c
+      ON c.id = l.congregationId
+      LEFT JOIN denominations cd
       ON cd.id = c.denominationId
       LEFT JOIN denominations pd
       ON pd.id = p.denominationId
@@ -61,9 +72,7 @@ export default defineEventHandler(async (event) => {
       denomination: result.denomination
         ? JSON.parse(result.denomination)
         : null,
-      congregations: result.congregations
-        ? JSON.parse(result.congregations)
-        : null,
+      locations: result.locations ? JSON.parse(result.locations) : null,
     }
 
     return person
