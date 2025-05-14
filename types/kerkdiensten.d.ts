@@ -5,6 +5,7 @@ type KFRoleOption = 'pastor'
 type KFDenomination = {
   id: string
   title: string
+  titleAbbr: string
 }
 
 type KFCongregationDb = {

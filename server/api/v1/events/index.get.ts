@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
     event,
   )
 
-  const bindings: string[] = []
+  const bindings: Array<string | number> = []
   let query = `
       SELECT
         e.id,
@@ -29,7 +29,8 @@ export default defineEventHandler(async (event) => {
                       ELSE
                         JSON_OBJECT(
                           'id', cd.id,
-                          'title', cd.title
+                          'title', cd.title,
+                          'titleAbbr', cd.titleAbbr
                         )
                     END
                 )
@@ -49,7 +50,8 @@ export default defineEventHandler(async (event) => {
                   ELSE
                     JSON_OBJECT(
                       'id', pd.id,
-                      'title', pd.title
+                      'title', pd.title,
+                      'titleAbbr', pd.titleAbbr
                     )
                 END
               )
@@ -82,7 +84,15 @@ export default defineEventHandler(async (event) => {
     bindings.push(filters.congregationId)
   }
 
-  query += 'GROUP BY e.id'
+  query += bindings.length ? 'AND' : 'WHERE'
+
+  query += `
+    e.startingAt > ?
+    GROUP BY e.id
+  `
+
+  const now = Math.floor(Date.now() / 1000)
+  bindings.push(now)
 
   const { results } = await DB.prepare(query)
     .bind(...bindings)

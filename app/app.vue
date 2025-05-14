@@ -21,3 +21,12 @@
     </NuxtLayout>
   </div>
 </template>
+
+<script setup lang="ts">
+  useHead({
+    titleTemplate: (title) => {
+      const baseTitle = 'Kerkdiensten Fryslân'
+      return title ? `${title} ~ ${baseTitle}` : baseTitle
+    },
+  })
+</script>

@@ -11,7 +11,8 @@ export default defineEventHandler(async (event) => {
           ELSE
             JSON_OBJECT(
               'id', d.id,
-              'title', d.title
+              'title', d.title,
+              'titleAbbr', d.titleAbbr
             )
         END AS denomination,
         JSON_GROUP_ARRAY(

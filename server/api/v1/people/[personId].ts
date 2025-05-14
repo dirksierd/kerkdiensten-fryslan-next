@@ -14,7 +14,8 @@ export default defineEventHandler(async (event) => {
           ELSE
             JSON_OBJECT(
               'id', pd.id,
-              'title', pd.title
+              'title', pd.title,
+              'titleAbbr', pd.titleAbbr
             )
         END AS denomination,
         JSON_GROUP_ARRAY(
@@ -30,7 +31,8 @@ export default defineEventHandler(async (event) => {
                 ELSE
                   JSON_OBJECT(
                     'id', cd.id,
-                    'title', cd.title
+                    'title', cd.title,
+                    'titleAbbr', cd.titleAbbr
                   )
               END
             )

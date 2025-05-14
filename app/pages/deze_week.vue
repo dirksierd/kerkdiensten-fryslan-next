@@ -7,4 +7,5 @@
 
 <script setup lang="ts">
   const { data: events } = await useFetch('/api/v1/events')
+  useHead({ title: 'Deze week' })
 </script>
