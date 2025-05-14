@@ -14,10 +14,17 @@
 	"observability": {
 		"enabled": true
 	},
+	"workers_dev": false,
+  "routes": [
+    {
+      "pattern": "next.kerkdienstenfryslan.nl",
+      "custom_domain": true
+    }
+  ],
 	"placement": { "mode": "smart" },
 	"d1_databases": [
 		{
-			"binding": "D1",
+			"binding": "DB",
 			"database_name": "kerkdiensten",
 			"database_id": "b697274e-636b-4e99-8207-36c37844f7d6"
 		}

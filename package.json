@@ -12,11 +12,14 @@
 		"cf-typegen": "wrangler types"
 	},
 	"dependencies": {
+		"@tailwindcss/vite": "^4.1.6",
 		"nuxt": "^3.17.3",
+		"tailwindcss": "^4.1.6",
 		"vue": "^3.5.13",
 		"vue-router": "^4.5.1"
 	},
 	"devDependencies": {
+		"@vue/typescript-plugin": "^2.2.10",
 		"nitro-cloudflare-dev": "^0.2.2",
 		"nitropack": "^2.11.12",
 		"wrangler": "^4.14.4"

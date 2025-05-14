@@ -1,6 +1,6 @@
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <p>Kerkdiensten<strong>Fryslân</strong></p>
   </div>
 </template>
