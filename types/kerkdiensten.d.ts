@@ -22,7 +22,8 @@ type KFCongregation = Omit<KFCongregationDb, 'denomination', 'locations'> & {
 
 type KFLocation = {
   title: string
-  congregation: KFCongregation | null
+  congregation: KFCongregation
+  locality: string
 }
 
 type KFPersonDb = {
@@ -68,6 +69,6 @@ type KFEvent = Omit<
 > & {
   isSpecial: boolean
   hasHolySupper: boolean
-  location: KFLocation[]
+  location: KFLocation
   roles: KFPersonRole[]
 }

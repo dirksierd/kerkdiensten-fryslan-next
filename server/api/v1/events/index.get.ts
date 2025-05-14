@@ -89,6 +89,7 @@ export default defineEventHandler(async (event) => {
   query += `
     e.startingAt > ?
     GROUP BY e.id
+    ORDER BY l.locality ASC, e.startingAt ASC
   `
 
   const now = Math.floor(Date.now() / 1000)

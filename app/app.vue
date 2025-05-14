@@ -4,7 +4,7 @@
 
     <NuxtLayout>
       <div class="space-y-4">
-        <AppBlock class="max-w-sm">
+        <AppBlock class="max-w-sm !space-y-0">
           <template #title>
             <NuxtLink
               to="/"

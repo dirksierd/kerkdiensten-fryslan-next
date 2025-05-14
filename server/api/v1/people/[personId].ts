@@ -52,7 +52,7 @@ export default defineEventHandler(async (event) => {
       FROM people p
       LEFT JOIN locations_people lp
       ON lp.personId = p.id
-      JOIN locations l
+      LEFT JOIN locations l
       ON l.id = lp.locationId
       LEFT JOIN congregations c
       ON c.id = l.congregationId

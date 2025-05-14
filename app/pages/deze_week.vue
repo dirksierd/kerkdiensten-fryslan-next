@@ -1,11 +1,11 @@
 <template>
   <AppBlock>
     <template #title>Deze week in Fryslân</template>
-    <pre>{{ events }}</pre>
+    <EventList v-if="events" :events="events" />
   </AppBlock>
 </template>
 
 <script setup lang="ts">
-  const { data: events } = await useFetch('/api/v1/events')
+  const { data: events } = await useFetch<KFEvent[]>('/api/v1/events')
   useHead({ title: 'Deze week' })
 </script>
