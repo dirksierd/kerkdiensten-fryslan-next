@@ -4,7 +4,9 @@
 
     <NuxtLayout>
       <div class="space-y-2 sm:space-y-4">
-        <AppBlock class="!space-y-0 rounded-none">
+        <AppBlock
+          class="fixed top-0 left-0 z-20 w-full !space-y-0 rounded-none"
+        >
           <template #title>
             <NuxtLink
               to="/"
@@ -18,7 +20,7 @@
           </p>
         </AppBlock>
 
-        <div class="mx-auto max-w-3xl p-2 sm:p-4">
+        <div class="mx-auto max-w-3xl p-2 pt-20 sm:p-4 sm:pt-34">
           <NuxtPage />
         </div>
       </div>
