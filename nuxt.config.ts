@@ -30,7 +30,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       bodyAttrs: {
-        class: 'bg-sky-100',
+        class: 'bg-sky-200',
       },
 
       htmlAttrs: {

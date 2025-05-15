@@ -2,11 +2,11 @@
   <div class="space-y-2">
     <div
       v-for="obj in eventsByDate"
-      class="space-y-2 rounded-xl bg-neutral-200 p-2"
+      class="space-y-2 rounded-lg bg-neutral-100 p-3"
     >
       <h2 class="font-bold">{{ obj.date }}</h2>
 
-      <div class="space-y-1">
+      <div>
         <EventListItem
           v-for="event in obj.events"
           :event="event"

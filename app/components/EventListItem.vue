@@ -1,5 +1,7 @@
 <template>
-  <div class="rounded-lg bg-neutral-100 p-3 pt-2">
+  <div
+    class="group relative -mt-[1px] border border-neutral-200 bg-white p-3 pt-2 first:mt-0 first:rounded-t-md last:rounded-b-md hover:z-10 hover:border-neutral-300"
+  >
     <time
       :datetime="formattedDate(event.startingAt)"
       class="block h-6 font-bold"
@@ -21,7 +23,7 @@
         v-for="role in event.roles"
         :key="`role-${role.role}-${role.person.id}`"
         :to="`/voorganger/${role.person.id}`"
-        class="mr-1 inline-block rounded-md border bg-white px-2 text-sm"
+        class="mr-1 inline-block rounded-md border border-neutral-200 bg-white px-2 text-sm group-hover:border-neutral-300"
       >
         {{ role.person.title }}. {{ role.person.firstName }}
         {{ role.person.lastName }}
