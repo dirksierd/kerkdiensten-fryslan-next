@@ -27,9 +27,16 @@
         {{ role.person.lastName }}
       </NuxtLink>
     </div>
+
+    <div v-if="event.description" class="mt-2 flex gap-2 text-sm">
+      <Bars3BottomLeftIcon class="w-3 shrink-0 basis-3" />
+      <div v-html="event.description" class="grow" />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  import { Bars3BottomLeftIcon } from '@heroicons/vue/20/solid'
+
   defineProps<{ event: KFEvent }>()
 </script>

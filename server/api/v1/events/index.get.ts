@@ -12,6 +12,7 @@ export default defineEventHandler(async (event) => {
         e.endingAt,
         e.hasHolySupper,
         e.isSpecial,
+        e.description,
         JSON_OBJECT(
           'title', l.title,
           'locality', l.locality,
