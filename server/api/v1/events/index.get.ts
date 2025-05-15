@@ -77,11 +77,11 @@ export default defineEventHandler(async (event) => {
 
   if (filters.personId) {
     query += `
-      JOIN events_people ep2
-      ON ep2.eventId = e.id
-      JOIN people p2
-      ON p2.id = ep2.personId
-      WHERE p2.id = ?
+      WHERE EXISTS (
+        SELECT 1
+        FROM events_people
+        WHERE eventId = e.id AND personId = ?
+      )
     `
     bindings.push(filters.personId)
   }
