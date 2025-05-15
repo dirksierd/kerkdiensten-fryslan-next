@@ -1,6 +1,6 @@
 <template>
   <AppBlock>
-    <template #title>{{ fullName }}</template>
+    <template #title>{{ title }}</template>
     <pre>{{ person }}</pre>
     <EventList v-if="events" :events="events" />
   </AppBlock>
@@ -17,7 +17,9 @@
 
   const { data: person } = await useFetch(`/api/v1/people/${personId}`)
 
-  const fullName = `${person.value.title}. ${person.value.firstName} ${person.value.lastName}`
+  const title = person.value
+    ? `${person.value.title}. ${person.value.firstName} ${person.value.lastName}`
+    : 'Onbekende voorganger'
 
-  useHead({ title: fullName })
+  useHead({ title })
 </script>

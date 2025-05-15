@@ -1,17 +1,19 @@
 <template>
   <AppBlock>
-    <template #title>{{ congregation.title }}</template>
+    <template #title>{{
+      congregation?.title || 'Onbekende gemeente'
+    }}</template>
 
-    <div class="space-y-2">
+    <div v-if="congregation" class="space-y-2">
       <p>
         Deze gemeente
         <template v-if="congregation.denomination">
           behoort tot de
           <strong>{{ congregation.denomination.title }}</strong> en
         </template>
-        heeft {{ congregation.locations.length }} locatie<template
+        heeft {{ congregation.locations.length }} vierplek<template
           v-if="congregation.locations.length > 1"
-          >s</template
+          >ken</template
         >:
       </p>
 
@@ -39,11 +41,11 @@
     '/api/v1/events?' + searchParams.toString(),
   )
 
-  const { data: congregation } = await useFetch(
+  const { data: congregation } = await useFetch<KFCongregation>(
     `/api/v1/congregations/${congregationId}`,
   )
 
   useHead({
-    title: congregation.value.title,
+    title: congregation.value?.title,
   })
 </script>
