@@ -1,8 +1,10 @@
 <template>
   <div class="rounded-lg bg-neutral-100 p-3 pt-2">
-    <time :datetime="startingAt.toISOString()" class="block font-bold">{{
-      startingAt.format('DD MMM HH:mm')
-    }}</time>
+    <time :datetime="startingAt.toISOString()" class="block h-6 font-bold">
+      <ClientOnly>
+        {{ startingAt.format('DD MMM HH:mm') }}
+      </ClientOnly>
+    </time>
 
     <div>
       <NuxtLink :to="`/gemeente/${event.location.congregation.id}`">
