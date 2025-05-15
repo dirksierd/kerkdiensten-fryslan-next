@@ -1,10 +1,10 @@
 <template>
-  <div class="mx-auto max-w-3xl p-2 sm:p-4">
+  <div>
     <NuxtRouteAnnouncer />
 
     <NuxtLayout>
       <div class="space-y-2 sm:space-y-4">
-        <AppBlock class="max-w-sm !space-y-0">
+        <AppBlock class="!space-y-0 rounded-none">
           <template #title>
             <NuxtLink
               to="/"
@@ -18,7 +18,9 @@
           </p>
         </AppBlock>
 
-        <NuxtPage />
+        <div class="mx-auto max-w-3xl p-2 sm:p-4">
+          <NuxtPage />
+        </div>
       </div>
     </NuxtLayout>
   </div>
