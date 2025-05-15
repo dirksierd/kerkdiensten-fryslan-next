@@ -1,35 +1,39 @@
 <template>
-  <AppBlock>
+  <AppPage>
     <template #title>{{
       congregation?.title || 'Onbekende gemeente'
     }}</template>
 
-    <div v-if="congregation" class="space-y-2">
-      <p>
-        Deze gemeente
-        <template v-if="congregation.denomination">
-          behoort tot de
-          <strong>{{ congregation.denomination.title }}</strong> en
-        </template>
-        heeft {{ congregation.locations.length }} vierplek<template
-          v-if="congregation.locations.length > 1"
-          >ken</template
-        >:
-      </p>
+    <AppBlock>
+      <div v-if="congregation" class="space-y-2">
+        <p>
+          Deze gemeente
+          <template v-if="congregation.denomination">
+            behoort tot de
+            <strong>{{ congregation.denomination.title }}</strong> en
+          </template>
+          heeft {{ congregation.locations.length }} vierplek<template
+            v-if="congregation.locations.length > 1"
+            >ken</template
+          >:
+        </p>
 
-      <ul class="list-disc pl-6">
-        <li
-          v-for="location in congregation.locations"
-          :key="`c-l-${location.id}`"
-        >
-          {{ location.title }} ({{ location.street }} {{ location.houseNumber
-          }}{{ location.houseNumberSuffix }}, {{ location.locality }})
-        </li>
-      </ul>
-    </div>
+        <ul class="list-disc pl-6">
+          <li
+            v-for="location in congregation.locations"
+            :key="`c-l-${location.id}`"
+          >
+            {{ location.title }} ({{ location.street }} {{ location.houseNumber
+            }}{{ location.houseNumberSuffix }}, {{ location.locality }})
+          </li>
+        </ul>
+      </div>
+    </AppBlock>
 
-    <EventList v-if="events" :events="events" />
-  </AppBlock>
+    <AppBlock>
+      <EventList v-if="events" :events="events" />
+    </AppBlock>
+  </AppPage>
 </template>
 
 <script setup lang="ts">

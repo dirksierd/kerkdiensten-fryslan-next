@@ -1,8 +1,11 @@
 <template>
-  <AppBlock>
+  <AppPage>
     <template #title>Deze week in Fryslân</template>
-    <EventList v-if="events" :events="events" />
-  </AppBlock>
+
+    <AppBlock>
+      <EventList v-if="events" :events="events" />
+    </AppBlock>
+  </AppPage>
 </template>
 
 <script setup lang="ts">

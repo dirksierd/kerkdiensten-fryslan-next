@@ -1,12 +1,9 @@
 <template>
-  <div class="space-y-2">
-    <div
-      v-for="obj in eventsByDate"
-      class="space-y-2 rounded-lg bg-neutral-100 p-2 sm:p-3"
-    >
-      <h2 class="font-bold">{{ obj.date }}</h2>
+  <div class="space-y-3">
+    <div v-for="obj in eventsByDate" class="space-y-2">
+      <h2 class="text-lg font-bold">{{ obj.date }}</h2>
 
-      <div>
+      <div class="pl-2">
         <EventListItem
           v-for="event in obj.events"
           :event="event"

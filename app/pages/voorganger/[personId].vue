@@ -1,9 +1,15 @@
 <template>
-  <AppBlock>
+  <AppPage>
     <template #title>{{ title }}</template>
-    <pre>{{ person }}</pre>
-    <EventList v-if="events" :events="events" />
-  </AppBlock>
+
+    <AppBlock>
+      <pre>{{ person }}</pre>
+    </AppBlock>
+
+    <AppBlock>
+      <EventList v-if="events" :events="events" />
+    </AppBlock>
+  </AppPage>
 </template>
 
 <script setup lang="ts">

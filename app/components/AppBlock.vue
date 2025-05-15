@@ -1,6 +1,6 @@
 <template>
   <div
-    class="space-y-2 rounded-lg bg-white px-3 py-2 shadow-sm sm:space-y-4 sm:p-6"
+    class="space-y-2 rounded-lg border border-sky-200 bg-white p-3 sm:space-y-4 sm:p-6"
   >
     <h1 v-if="hasTitle" class="font-title text-lg font-bold">
       <slot name="title" />
