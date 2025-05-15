@@ -37,6 +37,13 @@ export default defineNuxtConfig({
         lang: 'nl',
       },
 
+      meta: [
+        {
+          name: 'theme-color',
+          content: '#ffffff',
+        },
+      ],
+
       link: [
         {
           rel: 'preconnect',
