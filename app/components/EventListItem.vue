@@ -1,7 +1,10 @@
 <template>
   <div class="rounded-lg bg-neutral-100 p-3 pt-2">
-    <time :datetime="startingAt.toISOString()" class="block h-6 font-bold">
-      {{ startingAt.format('DD MMM HH:mm') }}
+    <time
+      :datetime="formattedDate(event.startingAt)"
+      class="block h-6 font-bold"
+    >
+      {{ formattedDate(event.startingAt, 'DD MMM HH:mm') }}
     </time>
 
     <div>
@@ -28,15 +31,5 @@
 </template>
 
 <script setup lang="ts">
-  import dayjs from 'dayjs'
-  import tz from 'dayjs/plugin/timezone'
-  import utc from 'dayjs/plugin/utc'
-  import nl from 'dayjs/locale/nl'
-
-  dayjs.locale(nl)
-  dayjs.extend(tz)
-  dayjs.extend(utc)
-
-  const props = defineProps<{ event: KFEvent }>()
-  const startingAt = dayjs.unix(props.event.startingAt).tz('Europe/Amsterdam')
+  defineProps<{ event: KFEvent }>()
 </script>
