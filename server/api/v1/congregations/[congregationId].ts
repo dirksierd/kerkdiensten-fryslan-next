@@ -18,7 +18,12 @@ export default defineEventHandler(async (event) => {
         JSON_GROUP_ARRAY(
           JSON_OBJECT(
             'id', l.id,
-            'title', l.title
+            'title', l.title,
+            'street', l.street,
+            'houseNumber', l.houseNumber,
+            'houseNumberSuffix', l.houseNumberSuffix,
+            'postalCode', l.postalCode,
+            'locality', l.locality
           )
         ) FILTER (
           WHERE c.id IS NOT NULL

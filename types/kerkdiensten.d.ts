@@ -24,6 +24,10 @@ type KFLocation = {
   title: string
   congregation: KFCongregation
   locality: string
+  street: string
+  postalCode: string
+  houseNumber: string
+  houseNumberSuffix: string
 }
 
 type KFPersonDb = {
