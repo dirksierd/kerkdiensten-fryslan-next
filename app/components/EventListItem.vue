@@ -4,7 +4,7 @@
       :datetime="formattedDate(event.startingAt)"
       class="block h-6 font-bold"
     >
-      {{ formattedDate(event.startingAt, 'DD MMM HH:mm') }}
+      {{ formattedDate(event.startingAt, 'HH:mm') }}
     </time>
 
     <div>
