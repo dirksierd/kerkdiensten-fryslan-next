@@ -1,8 +1,8 @@
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
-  css: ["~/assets/css/main.css"],
+  compatibilityDate: '2024-11-01',
+  css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
 
   typescript: {
@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: "cloudflare_module",
+    preset: 'cloudflare_module',
 
     cloudflare: {
       deployConfig: true,
@@ -26,32 +26,32 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["nitro-cloudflare-dev"],
+  modules: ['nitro-cloudflare-dev'],
   app: {
     head: {
       bodyAttrs: {
-        class: "bg-sky-100",
+        class: 'bg-sky-100',
       },
 
       htmlAttrs: {
-        lang: "nl",
+        lang: 'nl',
       },
 
       link: [
         {
-          rel: "preconnect",
-          href: "https://fonts.googleapis.com",
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com',
         },
         {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossorigin: "",
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: '',
         },
         {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;800&display=swap",
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Merriweather:wght@400;800&display=swap',
         },
       ],
     },
   },
-});
+})

@@ -3,30 +3,30 @@
  * https://developers.cloudflare.com/workers/wrangler/configuration/
  */
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "kerkdiensten-fryslan-next",
-	"main": "./.output/server/index.mjs",
-	"compatibility_date": "2025-05-14",
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./.output/public/"
-	},
-	"observability": {
-		"enabled": true
-	},
-	"workers_dev": false,
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kerkdiensten-fryslan-next",
+  "main": "./.output/server/index.mjs",
+  "compatibility_date": "2025-05-14",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./.output/public/",
+  },
+  "observability": {
+    "enabled": true,
+  },
+  "workers_dev": false,
   "routes": [
     {
       "pattern": "next.kerkdienstenfryslan.nl",
-      "custom_domain": true
-    }
+      "custom_domain": true,
+    },
   ],
-	"placement": { "mode": "smart" },
-	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "kerkdiensten",
-			"database_id": "b697274e-636b-4e99-8207-36c37844f7d6"
-		}
-	]
+  "placement": { "mode": "smart" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "kerkdiensten",
+      "database_id": "b697274e-636b-4e99-8207-36c37844f7d6",
+    },
+  ],
 }

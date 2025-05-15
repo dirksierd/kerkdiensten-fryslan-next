@@ -3,11 +3,11 @@
 @source inline('bg-sky-100');
 
 @theme {
-  --font-title: "Merriweather", serif;
+  --font-title: 'Merriweather', serif;
 }
 
 @layer components {
   pre {
-    @apply text-sm overflow-auto
+    @apply overflow-auto text-sm;
   }
 }
