@@ -1,6 +1,6 @@
 <template>
   <div
-    class="group relative -mt-[1px] border border-neutral-200 bg-white p-3 pt-2 first:mt-0 first:rounded-t-md last:rounded-b-md hover:z-10 hover:border-neutral-300"
+    class="group relative -mt-[1px] border border-neutral-200 bg-white p-3 pt-2 first:mt-0 first:rounded-t-md last:rounded-b-md hover:z-10 hover:border-neutral-400"
   >
     <time
       :datetime="formattedDate(event.startingAt)"
@@ -23,7 +23,7 @@
         v-for="role in event.roles"
         :key="`role-${role.role}-${role.person.id}`"
         :to="`/voorganger/${role.person.id}`"
-        class="mr-1 inline-block rounded-md border border-neutral-200 bg-white px-2 text-sm group-hover:border-neutral-300"
+        class="mr-1 inline-block rounded-md border border-neutral-200 bg-white px-2 text-sm group-hover:border-neutral-400 hover:border-sky-600"
       >
         {{ role.person.title }}. {{ role.person.firstName }}
         {{ role.person.lastName }}

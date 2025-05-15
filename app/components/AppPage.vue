@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="hasLeader || hasTitle" class="bg-sky-200 text-sky-600">
-      <div class="mx-auto max-w-3xl p-2 px-3 sm:space-y-4 sm:p-4">
+      <div class="mx-auto max-w-3xl px-3 py-1 sm:space-y-4 sm:px-4 sm:py-2">
         <slot v-if="hasLeader" name="leader" />
 
         <div v-if="hasTitle" class="font-title text-lg">

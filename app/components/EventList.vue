@@ -1,9 +1,12 @@
 <template>
   <div class="space-y-3">
     <div v-for="obj in eventsByDate" class="space-y-2">
-      <h2 class="text-lg font-bold">{{ obj.date }}</h2>
+      <h2 class="flex items-center gap-2 text-lg font-bold">
+        <CalendarIcon class="-mt-[2px] w-5 shrink-0 basis-5" />
+        <span class="grow">{{ obj.date }}</span>
+      </h2>
 
-      <div class="pl-2">
+      <div class="pl-4">
         <EventListItem
           v-for="event in obj.events"
           :event="event"
@@ -15,6 +18,8 @@
 </template>
 
 <script setup lang="ts">
+  import { CalendarIcon } from '@heroicons/vue/24/outline'
+
   const props = defineProps<{ events: KFEvent[] }>()
 
   const eventsByDate = computed(() => {
