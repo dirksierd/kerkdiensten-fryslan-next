@@ -1,19 +1,21 @@
 <template>
-  <div class="mx-auto max-w-3xl p-4">
+  <div class="mx-auto max-w-3xl p-2 sm:p-4">
     <NuxtRouteAnnouncer />
 
     <NuxtLayout>
-      <div class="space-y-4">
+      <div class="space-y-2 sm:space-y-4">
         <AppBlock class="max-w-sm !space-y-0">
           <template #title>
             <NuxtLink
               to="/"
-              class="block truncate text-3xl font-normal hover:underline hover:underline-offset-2"
+              class="block truncate text-2xl font-normal hover:underline hover:underline-offset-2 sm:text-3xl"
               >Kerkdiensten<strong>Fryslân</strong></NuxtLink
             >
           </template>
 
-          <p>Hier bouwen wij aan de nieuwe site.</p>
+          <p class="text-sm sm:text-base">
+            Hier bouwen wij aan de nieuwe site.
+          </p>
         </AppBlock>
 
         <NuxtPage />

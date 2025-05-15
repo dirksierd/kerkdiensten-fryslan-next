@@ -2,7 +2,7 @@
   <div class="space-y-2">
     <div
       v-for="obj in eventsByDate"
-      class="space-y-2 rounded-lg bg-neutral-100 p-3"
+      class="space-y-2 rounded-lg bg-neutral-100 p-2 sm:p-3"
     >
       <h2 class="font-bold">{{ obj.date }}</h2>
 
