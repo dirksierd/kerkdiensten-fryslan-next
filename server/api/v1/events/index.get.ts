@@ -6,6 +6,8 @@ export default defineEventHandler(async (event) => {
 
   const bindings: Array<string | number> = []
   let query = `
+    SELECT *
+    FROM (
       SELECT
         e.id,
         e.startingAt,
@@ -13,6 +15,7 @@ export default defineEventHandler(async (event) => {
         e.hasHolySupper,
         e.isSpecial,
         e.description,
+        l.locality,
         JSON_OBJECT(
           'title', l.title,
           'locality', l.locality,
@@ -95,9 +98,10 @@ export default defineEventHandler(async (event) => {
   query += bindings.length ? 'AND' : 'WHERE'
 
   query += `
-    e.startingAt > ?
-    GROUP BY e.id
-    ORDER BY l.locality ASC, e.startingAt ASC
+      e.startingAt > ?
+      GROUP BY e.id
+    ) q
+    ORDER BY q.locality ASC, q.startingAt ASC
   `
 
   const now = Math.floor(Date.now() / 1000)
