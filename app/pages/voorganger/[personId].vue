@@ -24,7 +24,7 @@
   const { data: person } = await useFetch(`/api/v1/people/${personId}`)
 
   const title = person.value
-    ? `${person.value.title}. ${person.value.firstName} ${person.value.lastName}`
+    ? `${person.value.title} ${person.value.firstName} ${person.value.lastName}`
     : 'Onbekende voorganger'
 
   useHead({ title })
