@@ -20,7 +20,7 @@
   useHead({
     titleTemplate: (title) => {
       const baseTitle = 'Kerkdiensten Fryslân'
-      return title ? `${title} ~ ${baseTitle}` : baseTitle
+      return title ? `${title} - ${baseTitle}` : baseTitle
     },
   })
 </script>
