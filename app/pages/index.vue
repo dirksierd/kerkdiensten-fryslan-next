@@ -1,11 +1,14 @@
 <template>
   <AppPage>
-    <AppBlock>
-      <template #title>Deze week</template>
+    <template #title>Deze week in Fryslân</template>
 
-      <div>
-        <NuxtLink to="/deze_week" class="underline">Bekijk de agenda</NuxtLink>
-      </div>
+    <AppBlock>
+      <EventList v-if="events" :events="events" />
     </AppBlock>
   </AppPage>
 </template>
+
+<script setup lang="ts">
+  const { data: events } = await useFetch<KFEvent[]>('/api/v1/events')
+  useHead({ title: 'Deze week' })
+</script>
