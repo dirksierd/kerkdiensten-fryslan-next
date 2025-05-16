@@ -6,6 +6,7 @@ export default defineEventHandler(async (event) => {
     `
       SELECT
         c.title,
+        c.url,
         CASE
           WHEN d.id IS NULL THEN NULL
           ELSE
