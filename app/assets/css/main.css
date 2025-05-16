@@ -16,7 +16,7 @@
   }
 
   dl dt {
-    @apply font-semibold
+    @apply font-semibold truncate
   }
 
   dl dd {
