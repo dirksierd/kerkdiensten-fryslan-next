@@ -101,7 +101,7 @@ export default defineEventHandler(async (event) => {
       e.startingAt > ?
       GROUP BY e.id
     ) q
-    ORDER BY q.locality ASC, q.startingAt ASC
+    ORDER BY q.startingAt ASC, q.locality ASC
   `
 
   const now = Math.floor(Date.now() / 1000)
