@@ -10,5 +10,4 @@
 
 <script setup lang="ts">
   const { data: events } = await useFetch<KFEvent[]>('/api/v1/events')
-  useHead({ title: 'Deze week' })
 </script>
