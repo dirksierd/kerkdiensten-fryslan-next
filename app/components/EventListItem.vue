@@ -16,7 +16,7 @@
     </div>
 
     <div
-      class="relative my-1 grow rounded-lg border border-neutral-200 bg-white px-3 pt-1 pb-2 first:mt-0 hover:z-10 sm:px-4 sm:pt-2 sm:pb-3"
+      class="relative my-1 grow rounded-lg border border-neutral-200 bg-white px-3 pt-1 pb-2 group-hover:border-neutral-400 first:mt-0 sm:px-4 sm:pt-2 sm:pb-3"
     >
       <NuxtLink
         :to="`/gemeente/${event.location.congregation.id}`"
