@@ -13,7 +13,7 @@
           <dt>Website</dt>
           <dd>
             <a
-              :href="congregation.url"
+              :href="congregation.url + '?utm_source=kerkdienstenfryslan'"
               class="flex items-center gap-1 underline"
               >Bezoeken <ArrowTopRightOnSquareIcon class="size-3"
             /></a>
