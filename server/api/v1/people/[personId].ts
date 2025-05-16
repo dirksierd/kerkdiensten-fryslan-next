@@ -49,7 +49,7 @@ export default defineEventHandler(async (event) => {
           )
         ) FILTER (
           WHERE l.id IS NOT NULL
-        ) AS locations
+        ) AS roles
       FROM people p
       LEFT JOIN locations_people lp
       ON lp.personId = p.id
@@ -73,7 +73,7 @@ export default defineEventHandler(async (event) => {
       denomination: result.denomination
         ? JSON.parse(result.denomination)
         : null,
-      locations: result.locations ? JSON.parse(result.locations) : null,
+      roles: result.roles ? JSON.parse(result.roles) : [],
     }
 
     return person

@@ -11,6 +11,7 @@ type KFDenomination = {
 type KFCongregationDb = {
   id: string
   title: string
+  url: string | null
   denomination: string | null
   locations: string
 }
@@ -38,17 +39,17 @@ type KFPersonDb = {
   id: string
   locality: string | null
   denomination: string | null
-  locations: string | null
+  roles: string | null
 }
 
-type KFPerson = Omit<KFPersonDb, 'denomination' | 'congregations'> & {
+type KFPerson = Omit<KFPersonDb, 'denomination' | 'roles'> & {
   denomination: KFDenomination | null
-  locations: KFLocationRole[]
+  roles: KFLocationRole[]
 }
 
 type KFLocationRole = {
   role: KFRoleOption
-  congregation: KFLocation
+  location: KFLocation
 }
 
 type KFPersonRole = {

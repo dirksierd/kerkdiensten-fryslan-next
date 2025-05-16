@@ -4,30 +4,29 @@
       congregation?.title || 'Onbekende gemeente'
     }}</template>
 
-    <AppBlock>
-      <div v-if="congregation" class="space-y-2">
-        <p>
-          Deze gemeente
-          <template v-if="congregation.denomination">
-            behoort tot de
-            <strong>{{ congregation.denomination.title }}</strong> en
-          </template>
-          heeft {{ congregation.locations.length }} vierplek<template
-            v-if="congregation.locations.length > 1"
-            >ken</template
-          >:
-        </p>
+    <AppBlock
+      v-if="congregation"
+      class="flex flex-col space-y-2 text-sm sm:flex-row"
+    >
+      <dl>
+        <template v-if="congregation.denomination">
+          <dt>Kerkverband</dt>
+          <dd>{{ congregation.denomination.title }}</dd>
+        </template>
+        <template v-if="congregation.url">
+          <dt>Website</dt>
+          <dd><a :href="congregation.url">Bezoeken</a></dd>
+        </template>
+      </dl>
 
-        <ul class="list-disc pl-6">
-          <li
-            v-for="location in congregation.locations"
-            :key="`c-l-${location.id}`"
-          >
-            {{ location.title }} ({{ location.street }} {{ location.houseNumber
-            }}{{ location.houseNumberSuffix }}, {{ location.locality }})
-          </li>
-        </ul>
-      </div>
+      <ul class="grow sm:text-right">
+        <li v-for="location in congregation.locations">
+          <strong class="block">{{ location.title }}</strong
+          >{{ location.street }} {{ location.houseNumber
+          }}{{ location.houseNumberSuffix }},
+          {{ location.locality }}
+        </li>
+      </ul>
     </AppBlock>
 
     <AppBlock>

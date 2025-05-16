@@ -10,4 +10,16 @@
   pre {
     @apply overflow-auto text-sm;
   }
+
+  dl {
+    @apply grid grid-cols-3
+  }
+
+  dl dt {
+    @apply font-semibold
+  }
+
+  dl dd {
+    @apply col-span-2
+  }
 }
