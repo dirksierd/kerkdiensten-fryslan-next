@@ -16,11 +16,11 @@
     </div>
 
     <div
-      class="relative my-1 grow rounded-lg bg-sky-100 p-3 pt-2 first:mt-0 hover:z-10"
+      class="relative my-1 grow rounded-lg border border-neutral-200 bg-white px-3 pt-1 pb-2 first:mt-0 hover:z-10 sm:px-4 sm:pt-2 sm:pb-3"
     >
       <NuxtLink
         :to="`/gemeente/${event.location.congregation.id}`"
-        class="block leading-7"
+        class="block w-full truncate text-sm leading-7 font-semibold"
       >
         {{ event.location.title }}, {{ event.location.locality }}
         <template v-if="event.location.congregation.denomination">
