@@ -6,16 +6,22 @@
 
     <AppBlock
       v-if="congregation"
-      class="flex flex-col space-y-2 text-sm sm:flex-row"
+      class="flex flex-col !space-y-0 text-sm sm:flex-row"
     >
       <dl>
+        <template v-if="congregation.url">
+          <dt>Website</dt>
+          <dd>
+            <a
+              :href="congregation.url"
+              class="flex items-center gap-1 underline"
+              >Bezoeken <ArrowTopRightOnSquareIcon class="size-3"
+            /></a>
+          </dd>
+        </template>
         <template v-if="congregation.denomination">
           <dt>Kerkverband</dt>
           <dd>{{ congregation.denomination.title }}</dd>
-        </template>
-        <template v-if="congregation.url">
-          <dt>Website</dt>
-          <dd><a :href="congregation.url">Bezoeken</a></dd>
         </template>
       </dl>
 
@@ -36,6 +42,8 @@
 </template>
 
 <script setup lang="ts">
+  import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/20/solid'
+
   const route = useRoute()
   const congregationId = route.params.congregationId as string
   const searchParams = new URLSearchParams({ congregationId })

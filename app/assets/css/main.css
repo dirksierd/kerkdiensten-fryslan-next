@@ -12,7 +12,7 @@
   }
 
   dl {
-    @apply grid grid-cols-3
+    @apply grid grid-cols-3 gap-x-2
   }
 
   dl dt {
