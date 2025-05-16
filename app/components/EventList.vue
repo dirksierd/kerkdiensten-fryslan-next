@@ -2,7 +2,9 @@
   <div class="space-y-3">
     <div v-for="obj in eventsByDate" class="space-y-2">
       <h2 class="flex items-center gap-2 text-lg font-bold">
-        <span class="grow first-letter:uppercase">{{ obj.date }}</span>
+        <span class="grow font-stretch-75% first-letter:uppercase">{{
+          obj.date
+        }}</span>
       </h2>
 
       <div>
