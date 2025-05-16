@@ -4,7 +4,7 @@
   >
     <time
       :datetime="formattedDate(event.startingAt)"
-      class="block h-6 font-bold"
+      class="block h-6 font-semibold"
     >
       {{ formattedDate(event.startingAt, 'HH:mm') }}
     </time>

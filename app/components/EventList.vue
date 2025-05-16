@@ -3,7 +3,7 @@
     <div v-for="obj in eventsByDate" class="space-y-2">
       <h2 class="flex items-center gap-2 text-lg font-bold">
         <CalendarIcon class="-mt-[2px] w-5 shrink-0 basis-5" />
-        <span class="grow">{{ obj.date }}</span>
+        <span class="grow first-letter:uppercase">{{ obj.date }}</span>
       </h2>
 
       <div class="pl-4">
@@ -23,12 +23,14 @@
   const props = defineProps<{ events: KFEvent[] }>()
 
   const eventsByDate = computed(() => {
-    const dates = props.events.map((e) => formattedDate(e.startingAt, 'DD MMM'))
+    const dates = props.events.map((e) =>
+      formattedDate(e.startingAt, 'dddd DD MMM'),
+    )
     const uniqDates = Array.from(new Set(dates))
 
     return uniqDates.map((date) => {
       const events = props.events.filter((e) => {
-        return date === formattedDate(e.startingAt, 'DD MMM')
+        return date === formattedDate(e.startingAt, 'dddd DD MMM')
       })
 
       return {
