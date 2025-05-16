@@ -36,7 +36,7 @@
     </AppBlock>
 
     <AppBlock>
-      <EventList v-if="events" :events="events" />
+      <EventList v-if="events" :events="events" :hide-locality="true" />
     </AppBlock>
   </AppPage>
 </template>

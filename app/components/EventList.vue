@@ -11,6 +11,7 @@
         <EventListItem
           v-for="event in obj.events"
           :event="event"
+          :hide-locality="hideLocality"
           :key="`event-list-${event.id}`"
         />
       </div>
@@ -19,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-  const props = defineProps<{ events: KFEvent[] }>()
+  const props = defineProps<{ events: KFEvent[]; hideLocality?: boolean }>()
 
   const eventsByDate = computed(() => {
     const dates = props.events.map((e) =>

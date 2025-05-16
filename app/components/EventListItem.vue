@@ -22,10 +22,13 @@
         :to="`/gemeente/${event.location.congregation.id}`"
         class="block w-full truncate text-sm leading-7 font-semibold"
       >
-        {{ event.location.title }}, {{ event.location.locality }}
-        <template v-if="event.location.congregation.denomination">
-          ({{ event.location.congregation.denomination.titleAbbr }})
-        </template>
+        {{ event.location.title
+        }}<template v-if="!hideLocality"
+          >, {{ event.location.locality }}
+          <template v-if="event.location.congregation.denomination">
+            ({{ event.location.congregation.denomination.titleAbbr }})
+          </template></template
+        >
       </NuxtLink>
 
       <div class="overflow-hidden">
@@ -51,5 +54,5 @@
 <script setup lang="ts">
   import { Bars3BottomLeftIcon } from '@heroicons/vue/20/solid'
 
-  defineProps<{ event: KFEvent }>()
+  defineProps<{ event: KFEvent; hideLocality?: boolean }>()
 </script>
