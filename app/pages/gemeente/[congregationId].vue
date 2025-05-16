@@ -6,7 +6,7 @@
 
     <AppBlock
       v-if="congregation"
-      class="flex flex-col !space-y-0 text-sm sm:flex-row"
+      class="flex flex-col gap-4 !space-y-0 text-sm sm:flex-row"
     >
       <dl>
         <template v-if="congregation.url">
