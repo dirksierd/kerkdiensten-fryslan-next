@@ -8,7 +8,14 @@ dayjs.locale(nl)
 dayjs.extend(tz)
 dayjs.extend(utc)
 
-function formattedDate(epoch: number, format?: string): string {
+function formattedDate(
+  epoch?: number | number,
+  format?: string,
+): string | null {
+  if (!epoch) {
+    return null
+  }
+
   const date = dayjs.unix(epoch).tz('Europe/Amsterdam')
 
   if (format) {

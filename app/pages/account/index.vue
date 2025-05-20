@@ -2,9 +2,10 @@
   <AppPage>
     <template #title>Beheer</template>
     <AppBlock>
-      <template #title>Diensten</template>
+      <template #title>Activiteiten</template>
       <div>
-        <div
+        <NuxtLink
+          :to="`/account/activiteiten/${event.id}`"
           v-for="event in events"
           :key="event.id"
           class="grid grid-cols-7 border-b border-neutral-300 py-1 text-sm first:border-t"
@@ -12,6 +13,7 @@
           <div>
             {{ formattedDate(event.startingAt, 'HH:mm') }}
           </div>
+
           <div>{{ event.kind }}</div>
           <div class="col-span-5">
             <div v-if="event.description" v-html="event.description" />
@@ -25,7 +27,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </NuxtLink>
       </div>
     </AppBlock>
   </AppPage>

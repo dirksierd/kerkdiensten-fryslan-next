@@ -2,7 +2,7 @@
   <div class="group flex items-stretch gap-4">
     <div class="flex w-14 shrink-0 basis-14 items-center text-sky-600">
       <time
-        :datetime="formattedDate(event.startingAt)"
+        :datetime="formattedDate(event.startingAt) || undefined"
         class="block text-sm font-semibold font-stretch-75%"
       >
         {{ formattedDate(event.startingAt, 'HH:mm') }}

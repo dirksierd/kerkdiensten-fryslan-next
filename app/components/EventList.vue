@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <p v-else>Er zijn geen diensten bekend.</p>
+    <p v-else>Er zijn geen activiteiten bekend.</p>
   </div>
 </template>
 
