@@ -12,6 +12,7 @@ export default defineEventHandler(async (event) => {
         e.id,
         e.startingAt,
         e.endingAt,
+        e.kind,
         e.hasHolySupper,
         e.isSpecial,
         e.description,
