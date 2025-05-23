@@ -57,16 +57,19 @@ type KFPersonRole = {
   person: KFPerson
 }
 
-type KFEventDb = {
-  id: string
+type KFFormEvent = {
   startingAt: number
   endingAt: number
-  location: string
   kind: KFEventKind
   description: string
   hasHolySupper: 1 | 0
   language: KFEventLanguage
   isSpecial: 1 | 0
+}
+
+type KFEventDb = KFFormEvent & {
+  id: string
+  location: string
   roles: string
 }
 
